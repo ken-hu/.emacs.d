@@ -1,0 +1,35 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("Speaker.h" include (:system-flag t) nil [1 21])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [23 43])
+            ("Hello" using (:type ("Hello" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [44 66])
+            ("main" function
+               (:arguments 
+                  ( ("argc" variable (:type "int") (reparse-symbol arg-sub-list) [77 86])
+                    ("argv" variable
+                       (:pointer 1
+                        :dereference 1
+                        :type "char")
+                        (reparse-symbol arg-sub-list) [87 100]))                  
+                :type "int")
+                nil [68 167]))          
+      :file "HelloWorld.cpp"
+      :pointmax 168
+      :fsize 167
+      :lastmodtime '(22864 9594 0 0)
+      :unmatched-syntax nil))
+  :file "!Users!kenhu!Desktop!cmake-hello-world!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

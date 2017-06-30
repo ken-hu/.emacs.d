@@ -1,0 +1,19 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("cstdio" include (:system-flag t) nil [1 18])
+            ("mylib.h" include nil nil [19 37])
+            ("do_something_else" function (:type "void") nil [39 99]))          
+      :file "mylib_generated.cpp"
+      :pointmax 100
+      :fsize 99
+      :lastmodtime '(22864 5798 0 0)
+      :unmatched-syntax nil))
+  :file "!Users!kenhu!Desktop!cmake-example!build!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

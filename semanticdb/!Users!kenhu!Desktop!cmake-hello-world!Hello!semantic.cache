@@ -1,0 +1,56 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("Speaker.h" include nil nil [1 21])
+            ("Hello" using (:type ("Hello" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [23 45])
+            ("std" using (:type ("std" type
+                 (:prototype t
+                  :type "namespace")
+                  nil nil)) nil [46 66])
+            ("Hello" type
+               (:members 
+                  ( ("sayHello" function
+                       (:parent "Speaker"
+                        :type "void")
+                        (reparse-symbol namespacesubparts) [88 149]))                  
+                :type "namespace")
+                nil [68 151]))          
+      :file "Speaker.cpp"
+      :pointmax 152
+      :fsize 151
+      :lastmodtime '(22864 9594 0 0)
+      :unmatched-syntax nil)
+    (semanticdb-table "semanticdb-table"
+      :major-mode c-mode
+      :tags 
+        '( ("stdio.h" include (:system-flag t) nil [1 19])
+            ("iostream" include (:system-flag t) nil [20 39])
+            ("Hello" type
+               (:members 
+                  ( ("Speaker" type
+                       (:members 
+                          ( ("public" label nil (reparse-symbol classsubparts) [87 94])
+                            ("sayHello" function
+                               (:prototype-flag t
+                                :type "void")
+                                (reparse-symbol classsubparts) [101 117]))                          
+                        :type "class")
+                        (reparse-symbol namespacesubparts) [62 122]))                  
+                :type "namespace")
+                nil [41 124]))          
+      :file "Speaker.h"
+      :pointmax 125
+      :fsize 124
+      :lastmodtime '(22864 6121 0 0)
+      :unmatched-syntax nil))
+  :file "!Users!kenhu!Desktop!cmake-hello-world!Hello!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")

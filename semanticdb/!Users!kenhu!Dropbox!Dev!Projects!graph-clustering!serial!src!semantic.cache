@@ -1,0 +1,195 @@
+;; Object semanticdb-project-database-file
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "semanticdb-project-database-file"
+  :tables
+  (list
+    (semanticdb-table "semanticdb-table"
+      :major-mode c++-mode
+      :tags 
+        '( ("LANCZOS_CC_" variable (:constant-flag t) nil [382 393])
+            ("lanczos.h" include nil nil [395 415])
+            ("iostream" include (:system-flag t) nil [416 435])
+            ("exception" include (:system-flag t) nil [436 456])
+            ("utility" include (:system-flag t) nil [457 475])
+            ("cmath" include (:system-flag t) nil [476 492])
+            ("std::cout" using (:type ("std::cout" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [534 550])
+            ("std::endl" using (:type ("std::endl" type
+                 (:prototype t
+                  :type "class")
+                  nil nil)) nil [551 567])
+            ("cmath" include (:system-flag t) nil [1343 1359])
+            ("Lanczos" function
+               (:template 
+                  ( ("Vector" type (:type "class") nil nil)
+                    ("T" type (:type "class") nil nil))                  
+                :type ("Lanczos" type (:type "class") nil nil)
+                :arguments 
+                  ( ("g" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Graph" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [1426 1441])
+                    ("num_of_eigenvec" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [1442 1469])
+                    ("SO" variable (:type "bool") (reparse-symbol arg-sub-list) [1470 1478]))                  
+                :parent "Lanczos"
+                :constructor-flag t)
+                nil [1360 3183])
+            ("getIteration" function
+               (:template 
+                  ( ("Vector" type (:type "class") nil nil)
+                    ("T" type (:type "class") nil nil))                  
+                :type "int"
+                :arguments 
+                  ( ("num_of_eigenvec" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3544 3571])
+                    ("size" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [3572 3589]))                  
+                :constant-flag t
+                :parent "Lanczos")
+                nil [3463 4029])
+            ("multGraphVec" function
+               (:template 
+                  ( ("Vector" type (:type "class") nil nil)
+                    ("T" type (:type "class") nil nil))                  
+                :type ("Vector" type (:type "class") nil nil)
+                :arguments 
+                  ( ("g" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Graph" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4420 4435])
+                    ("vec" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Vector" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [4436 4454]))                  
+                :parent "Lanczos")
+                nil [4342 4805])
+            ("gramSchmidt" function
+               (:template 
+                  ( ("Vector" type (:type "class") nil nil)
+                    ("T" type (:type "class") nil nil))                  
+                :type "void"
+                :arguments 
+                  ( ("k" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [5143 5156])
+                    ("v" variable
+                       (:reference 1
+                        :type ("Vector" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5158 5168]))                  
+                :typemodifiers ("inline")
+                :parent "Lanczos")
+                nil [5061 5578])
+            ("dot" function
+               (:template 
+                  ( ("Vector" type (:type "class") nil nil)
+                    ("T" type (:type "class") nil nil))                  
+                :type ("T" type (:type "class") nil nil)
+                :arguments 
+                  ( ("v1" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Vector" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5901 5918])
+                    ("v2" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Vector" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [5919 5936]))                  
+                :typemodifiers ("inline")
+                :parent "Lanczos")
+                nil [5830 6217])
+            ("norm" function
+               (:template 
+                  ( ("Vector" type (:type "class") nil nil)
+                    ("T" type (:type "class") nil nil))                  
+                :type ("T" type (:type "class") nil nil)
+                :arguments 
+                  ( ("vec" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Vector" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6291 6309]))                  
+                :typemodifiers ("inline")
+                :parent "Lanczos")
+                nil [6219 6422])
+            ("l2norm" function
+               (:template 
+                  ( ("Vector" type (:type "class") nil nil)
+                    ("T" type (:type "class") nil nil))                  
+                :type ("T" type (:type "class") nil nil)
+                :arguments 
+                  ( ("alpha" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Vector" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6498 6518])
+                    ("beta" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type ("Vector" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [6519 6538]))                  
+                :typemodifiers ("inline")
+                :parent "Lanczos")
+                nil [6424 7097])
+            ("normalise" function
+               (:template 
+                  ( ("Vector" type (:type "class") nil nil)
+                    ("T" type (:type "class") nil nil))                  
+                :type ("Vector" type (:type "class") nil nil)
+                :arguments 
+                  ( ("vec" variable
+                       (:reference 1
+                        :type ("Vector" type (:type "class") nil nil))
+                        (reparse-symbol arg-sub-list) [7182 7194]))                  
+                :typemodifiers ("inline")
+                :parent "Lanczos")
+                nil [7099 7291])
+            ("init" function
+               (:template 
+                  ( ("Vector" type (:type "class") nil nil)
+                    ("T" type (:type "class") nil nil))                  
+                :type ("Vector" type (:type "class") nil nil)
+                :arguments 
+                  ( ("size" variable
+                       (:reference 1
+                        :constant-flag t
+                        :type "int")
+                        (reparse-symbol arg-sub-list) [7363 7379]))                  
+                :parent "Lanczos")
+                nil [7293 7557])
+            ("print_tri_mat" function
+               (:template 
+                  ( ("Vector" type (:type "class") nil nil)
+                    ("T" type (:type "class") nil nil))                  
+                :type "void"
+                :parent "Lanczos")
+                nil [7559 8084]))          
+      :file "lanczos.cc"
+      :pointmax 8092
+      :fsize 8091
+      :lastmodtime '(22870 54761 0 0)
+      :unmatched-syntax nil
+      :lexical-table 
+        '(("LANCZOS_CC_")
+          )
+))
+  :file "!Users!kenhu!Dropbox!Dev!Projects!graph-clustering!serial!src!semantic.cache"
+  :semantic-tag-version "2.0"
+  :semanticdb-version "2.2")
