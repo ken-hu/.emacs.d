@@ -25,6 +25,11 @@
 (set-face-attribute 'default t :font "menlo-14")
 (setq-default line-spacing 0.3)
 
+(setq-default indent-tabs-mode nil)
+(setq c-default-style "linux"
+      c-basic-style: "bsd"
+      c-basic-offset 4)
+
 (load-theme 'dracula t)
 ;;(load-theme 'solarized t)
 ;;(set-frame-parameter nil 'background-mode 'dark)
