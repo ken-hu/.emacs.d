@@ -4,3 +4,5 @@ semanticdb/*
 elpa/*
 bookmarks
 recentf
+custom.el
+bookmarks
