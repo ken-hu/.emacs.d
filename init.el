@@ -12,14 +12,15 @@
 (blink-cursor-mode 0)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(menu-bar-mode -1)
+;;(menu-bar-mode -1)
 (mouse-wheel-mode -1)
 (setq mouse-wheel-scroll-amount '(0.07))
 (setq mouse-wheel-progressive-speed nil)
 (setq ring-bell-function 'ignore)
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
-(set-default-font "consolas-14")
-(set-default-font "menlo-14")
+;;(set-default-font "menlo-14")
+(add-to-list 'default-frame-alist '(font . "menlo-14"))
+(set-face-attribute 'default t :font "menlo-14")
 (setq-default line-spacing 0.3)
 
 (load-theme 'dracula t)
@@ -59,7 +60,7 @@
   (eval-after-load 'helm
     (lambda () 
       (set-face-attribute 'helm-source-header nil
-  			  :foreground "white"
+  			  ;;:foreground "white"
   			  ;;:background ""
   			  :height 200)))
 
@@ -188,3 +189,5 @@ Repeated invocations toggle between the two most recently open buffers."
 ;; c-mode-common-hook is also called by c++-mode
   (add-hook 'c-mode-common-hook #'my-flycheck-rtags-setup)
 )
+
+(global-set-key (kbd "C-x g") 'magit-status)
