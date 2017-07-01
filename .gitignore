@@ -6,4 +6,6 @@ bookmarks
 recentf
 custom.el
 bookmarks
-projectile-bookmarks.eld
+projectile*
+eshell/history
+eshell/lastdir

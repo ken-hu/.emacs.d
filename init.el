@@ -8,8 +8,8 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (setq create-lockfiles nil)
-(setq backup-directory-alist `(("." . "~/.emacs.bk")))
-(setq auto-save-file-name-transforms `((".*" ,"~/.emacs.bk" t)))
+(setq backup-directory-alist `(("." . "~/.emacs.bk/")))
+(setq auto-save-file-name-transforms `((".*" ,"~/.emacs.bk/" t)))
 
 (blink-cursor-mode 0)
 (tool-bar-mode -1)
@@ -107,33 +107,6 @@
   (setq company-idle-delay 0)
 )
 
-;;(use-package powerline
-;;  :ensure t)
-;;
-;;(use-package smart-mode-line-powerline-theme
-;;  :ensure t)
-;;
-;;(use-package smart-mode-line
-;;  :ensure t
-;;  :config
-;;  (require 'powerline)
-;;  (setq powerline-default-separator 'arrow-fade)
-;;  (setq sml/theme 'powerline)
-;;  (sml/setup)
-;;)
-
-;;(setq mode-line-format
-;;      (list
-;;       ;; value of `mode-name'
-;;       "%m: "
-;;       ;; value of current buffer name
-;;       "buffer %b, "
-;;       ;; value of current line number
-;;       "line %l "
-;;       "-- user: "
-;;       ;; value of user
-;;       (getenv "USER")))
-
 (defun switch-to-previous-buffer ()
   "Switch to previously open buffer.
 Repeated invocations toggle between the two most recently open buffers."
@@ -219,3 +192,6 @@ Repeated invocations toggle between the two most recently open buffers."
   (setq projectile-switch-project-action 'helm-projectile)
   (setq projectile-enable-caching t)
 )
+
+(add-to-list 'load-path "~/.emacs.d/el/")
+(require 'init-powerline)
