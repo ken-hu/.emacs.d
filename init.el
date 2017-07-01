@@ -204,3 +204,13 @@ Repeated invocations toggle between the two most recently open buffers."
   (global-set-key (kbd "C-x g") 'magit-status)
 )
 
+(use-package helm-projectile)
+
+(use-package projectile
+  :config
+  (projectile-global-mode)
+  (setq projectile-completion-system 'helm)
+  (helm-projectile-on)
+  (setq projectile-switch-project-action 'helm-projectile)
+  (setq projectile-enable-caching t)
+)
