@@ -26,7 +26,7 @@
         "v" 'rtags-find-virtuals-at-point
         "V" 'rtags-print-enum-value-at-point
         "ar" 'rtags-find-all-references-at-point
-        "fs" 'rtags-find-symbo
+        "fs" 'rtags-find-symbol
         "fr" 'rtags-find-references
         "ff" 'rtags-find-file
 
