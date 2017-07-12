@@ -23,4 +23,5 @@
 (use-package magit
   :config
   (global-set-key (kbd "C-x g") 'magit-status)
+  (setq magit-diff-highlight-hunk-body nil)
 )
