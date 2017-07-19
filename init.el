@@ -19,6 +19,7 @@
 (require 'init-company-rtags-flycheck)
 (require 'init-global-functions)
 (require 'init-org)
+(require 'nuodb)
 
 (use-package magit
   :config
