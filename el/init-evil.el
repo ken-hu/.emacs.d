@@ -6,8 +6,11 @@
 (use-package evil
   :config
   (evil-mode t)
-  (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
   (evil-leader/set-leader ",")
+  (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
+  ;; Ignore EOF in visual mode
+  (define-key evil-visual-state-map (kbd "h") 'backward-char)
+  (define-key evil-visual-state-map (kbd "l") 'forward-char)
   ;; Disable mouse scrollling in insert mode
   (add-hook 'evil-insert-state-entry-hook (lambda() (mouse-wheel-mode -1)))
   (add-hook 'evil-insert-state-exit-hook 'mouse-wheel-mode -1)

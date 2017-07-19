@@ -72,7 +72,7 @@
    `(link ((,class (:foreground ,const :underline t))))
    `(linum ((,class (:slant italic :foreground ,bg4 :background ,bg1))))
    `(minibuffer-prompt ((,class (:bold t :foreground ,keyword))))
-   `(region ((,class (:background ,str :foreground ,bg1))))
+   `(region ((,class (:background ,bg5 :foreground ,rainbow-2))))
    `(show-paren-match-face ((,class (:background ,warning))))
    `(trailing-whitespace ((,class :foreground nil :background ,warning)))
    `(vertical-border ((,class (:foreground ,bg2))))
