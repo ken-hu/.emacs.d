@@ -68,7 +68,7 @@
    `(hl-line ((,class (:background  ,bg5))))
    `(info-quoted-name ((,class (:foreground ,builtin))))
    `(info-string ((,class (:foreground ,str))))
-   `(lazy-highlight ((,class (:foreground "#000000" :background ,keyword))))
+   `(lazy-highlight ((,class (:foreground ,bg1 :background ,keyword))))
    `(link ((,class (:foreground ,const :underline t))))
    `(linum ((,class (:slant italic :foreground ,bg4 :background ,bg1))))
    `(minibuffer-prompt ((,class (:bold t :foreground ,keyword))))
@@ -191,7 +191,7 @@
    `(ido-only-match ((,class (:foreground ,warning))))
    `(ido-subdir ((,class (:foreground ,builtin))))
    ;; isearch
-   `(isearch ((,class (:bold t :foreground "#000000" :background ,keyword))))
+   `(isearch ((,class (:bold t :foreground ,bg1 :background ,keyword))))
    `(isearch-fail ((,class (:foreground ,bg1 :background ,warning))))
    ;; jde-java
    `(jde-java-font-lock-constant-face ((t (:foreground ,const))))
