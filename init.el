@@ -26,3 +26,18 @@
   (global-set-key (kbd "C-x g") 'magit-status)
   (setq magit-diff-highlight-hunk-body nil)
 )
+
+(use-package yasnippet
+  :config
+  (yas-reload-all)
+  (add-hook 'c++-mode-hook 'yas-minor-mode)
+  (add-hook 'c-mode-hook 'yas-minor-mode)
+  (add-hook 'python-mode-hook 'yas-minor-mode)
+  (add-hook 'java-mode-hook 'yas-minor-mode)
+  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+  (setq tab-always-indent 'complete)
+  (setq yas-prompt-functions '(yas-completing-prompt
+                               yas-ido-prompt
+                               yas-dropdown-prompt))
+  (define-key yas-minor-mode-map (kbd "<escape>") 'yas-exit-snippet)
+)

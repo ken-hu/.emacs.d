@@ -30,8 +30,14 @@
 ;;(setq solarized-colors '256)
 ;;(enable-theme 'solarized)
 
-(global-hl-line-mode 1)
+(global-hl-line-mode 1) ;; cursor line
 ;;(set-face-background 'hl-line "#3e4446")
 ;;(set-face-foreground 'highlight nil)
+
+(setq echo-keystrokes 0.1 ;; Show the command in minibuffer immediately
+      use-dialog-box nil  ;; Disable any pop up
+      visible-bell t)
+(show-paren-mode t)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (provide 'init-custom)
