@@ -7,7 +7,9 @@
   (setq company-idle-delay 0)
 )
 
+(add-to-list 'load-path "/usr/local/rtags/share/emacs/site-lisp/rtags")
 (use-package rtags
+  :ensure nil
   :config
   (require 'company-rtags)
   (setq rtags-completions-enabled t)
@@ -55,6 +57,7 @@
 )
 
 (use-package flycheck-rtags
+  :ensure nil
   :config
   (add-hook 'c++-mode-hook 'flycheck-mode)
   (add-hook 'c-mode-hook 'flycheck-mode)
