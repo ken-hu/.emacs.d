@@ -4,21 +4,23 @@
   (setq company-backends (delete 'company-semantic company-backends))
   (add-to-list 'company-backends 'company-c-headers)
   (define-key company-active-map (kbd "M-h") #'company-quickhelp-manual-begin)
-  (setq company-idle-delay 0)
+  (setq company-idle-delay 0.5)
+  (setq company-selection-wrap-around t) ; loop over candidates
+  (setq company-dabbrev-downcase 0) ; disable downcase the returned candidates
 )
 
 (add-to-list 'load-path "/usr/local/rtags/share/emacs/site-lisp/rtags")
 (use-package rtags
   :ensure nil
   :config
-  (require 'company-rtags)
+  (setq rtags-autostart-diagnostics t)
+  (rtags-diagnostics)
   (setq rtags-completions-enabled t)
   (setq rtags-use-helm t)
   (add-to-list 'exec-path (expand-file-name "/usr/local/bin"))
-  (eval-after-load 'company
-  '(add-to-list
-    'company-backends 'company-rtags))
-  (setq rtags-autostart-diagnostics t)
+  (push 'company-rtags company-backends)
+  (global-company-mode)
+  (define-key c-mode-base-map (kbd "<C-tab>") (function company-complete))
   ;;(rtags-enable-standard-keybindings)
   (eval-after-load 'rtags
     (dolist (mode '(c-mode c++-mode))
