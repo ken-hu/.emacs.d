@@ -1,7 +1,13 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (setq create-lockfiles nil)
-(setq backup-directory-alist `(("." . "~/.emacs.bk/")))
-(setq auto-save-file-name-transforms `((".*" ,"~/.emacs.bk/" t)))
+;;(setq backup-directory-alist `(("." . "~/.emacs.bk/")))
+;;(setq auto-save-file-name-transforms `((".*" ,"~/.emacs.bk/" t)))
+;;(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+;;(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+
+;; Disable backup and autosave
+(setq make-backup-files nil)
+(setq auto-save-default nil)
 
 (blink-cursor-mode 0)
 (global-auto-revert-mode 1)
