@@ -17,13 +17,13 @@
 (setq org-capture-templates
       '(
         ("t" "TODO tasks" entry (file "todo.org")
-         "* TODO%?\n%u\n" :empty-lines 1)
+         "* TODO%?\n%U\n" :empty-lines 1)
 
         ("n" "NOTE" entry (file+headline "notes.org" "Work")
-         "* %?\n%u\n" :empty-lines 1)
+         "* %?\n%U\n" :empty-lines 1)
 
         ("c" "CheckBox" checkitem (file+headline "checkbox.org" "Checkbox")
-         "[ ] %?\n%u\n" :empty-lines 1)
+         "[ ] %?\n%U\n" :empty-lines 1)
        )
 )
 
