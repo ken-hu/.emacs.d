@@ -13,6 +13,10 @@
 (setq org-src-fontify-natively t)
 ;; #+STARTUP: showeverything
 (setq org-startup-folded nil)
+(local-set-key (kbd "C-c e") 'outline-show-all)
+
+(org-indent-mode) ;; Clean view
+(setq org-hide-emphasis-markers t) ;; Hide markup makers
 
 (setq org-capture-templates
       '(
