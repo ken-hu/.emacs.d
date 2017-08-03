@@ -16,7 +16,8 @@
                           ;;:background ""
                           :height 200)))
 
-  (setq helm-buffers-fuzzy-matching t
+  (setq helm-buffer-max-length 30 ;; Length of the filename column
+        helm-buffers-fuzzy-matching t
         helm-recentf-fuzzy-match    t)
 
   (global-set-key (kbd "M-x") 'helm-M-x)
