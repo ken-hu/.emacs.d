@@ -13,10 +13,25 @@
 (setq org-src-fontify-natively t)
 ;; #+STARTUP: showeverything
 (setq org-startup-folded nil)
-(local-set-key (kbd "C-c e") 'outline-show-all)
-
-(add-hook 'org-mode-hook 'org-indent-mode) ;; Clean view
+;(add-hook 'org-mode-hook 'org-indent-mode) ;; Clean view
 (setq org-hide-emphasis-markers t) ;; Hide markup makers
+
+;; Hide blocks by default
+(add-hook 'org-mode-hook 'org-hide-block-all)
+(defvar org-blocks-hidden nil)
+(defun org-toggle-blocks ()
+  (interactive)
+  (if org-blocks-hidden
+      (org-show-block-all)
+    (org-hide-block-all))
+  (setq-local org-blocks-hidden (not org-blocks-hidden)))
+(add-hook 'org-mode-hook 'org-toggle-blocks)
+
+(add-hook 'org-mode-hook
+          (lambda()
+            (local-set-key (kbd "C-c :") nil) ;; disable org-toggle-fixed-width-section
+            (local-set-key (kbd "C-c e") 'outline-show-all)
+            (local-set-key (kbd "C-c t") 'org-toggle-blocks)))
 
 (setq org-capture-templates
       '(

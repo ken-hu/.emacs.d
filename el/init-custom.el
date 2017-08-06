@@ -46,4 +46,6 @@
 (show-paren-mode t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(global-visual-line-mode t) ;; No words wrapping arrows
+
 (provide 'init-custom)

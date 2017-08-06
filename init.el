@@ -41,3 +41,8 @@
                                yas-dropdown-prompt))
   (define-key yas-minor-mode-map (kbd "<escape>") 'yas-exit-snippet)
 )
+
+(use-package markdown-mode
+  :config
+  (setq markdown-command "/usr/local/bin/markdown")
+)
