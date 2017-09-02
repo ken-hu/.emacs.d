@@ -48,4 +48,17 @@
 
 (global-visual-line-mode t) ;; No words wrapping arrows
 
+;; Set the frame title format to "buffer-name (full-path)"
+;; Mark that there are unsaved changes
+(setq frame-title-format
+      '("%b "
+        (:eval (if (buffer-file-name)
+                   (progn
+                     (setq name (abbreviate-file-name (buffer-file-name)))
+                     `("(",name")"))
+                 ))
+        (:eval (if (buffer-modified-p)
+                   " •"))
+        ))
+
 (provide 'init-custom)
