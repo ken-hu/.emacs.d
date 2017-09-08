@@ -46,3 +46,9 @@
   :config
   (setq markdown-command "/usr/local/bin/markdown")
 )
+
+(use-package jedi
+  :config
+  (add-hook 'python-mode-hook 'jedi:setup)
+  (setq jedi:complete-on-dot t)
+)

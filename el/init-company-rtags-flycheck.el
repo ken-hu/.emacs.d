@@ -2,7 +2,7 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode)
   (setq company-backends (delete 'company-semantic company-backends))
-  (setq company-global-modes '(not c-mode c++-mode))
+  (setq company-global-modes '(not c-mode c++-mode python-mode))
   (add-to-list 'company-backends 'company-c-headers)
   (define-key company-active-map (kbd "M-h") #'company-quickhelp-manual-begin)
   (setq company-idle-delay 0.5)

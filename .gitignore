@@ -10,3 +10,5 @@ projectile*
 eshell/history
 eshell/lastdir
 url
+/.python-environments/*
+/ac-comphist.dat
