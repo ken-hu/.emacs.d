@@ -14,6 +14,7 @@
   ;; Disable mouse scrollling in insert mode
   (add-hook 'evil-insert-state-entry-hook (lambda() (mouse-wheel-mode -1)))
   (add-hook 'evil-insert-state-exit-hook 'mouse-wheel-mode -1)
+  (add-hook 'evil-insert-state-exit-hook 'my-save-if-bufferfilename)
 )
 
 (with-eval-after-load 'evil

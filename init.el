@@ -18,12 +18,12 @@
 )
 
 (add-to-list 'load-path "~/.emacs.d/el/")
+(require 'init-global-functions)
 (require 'init-custom)
 (require 'init-powerline)
 (require 'init-evil)
 (require 'init-company-rtags-flycheck)
 (require 'init-helm-projectile)
-(require 'init-global-functions)
 (require 'init-org)
 (require 'nuodb)
 
