@@ -11,6 +11,12 @@
 (setq use-package-always-ensure t)
 (eval-when-compile (require 'use-package))
 
+(use-package exec-path-from-shell
+  :defer
+  (when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+)
+
 (add-to-list 'load-path "~/.emacs.d/el/")
 (require 'init-custom)
 (require 'init-powerline)
