@@ -2,7 +2,7 @@
   :config
   (add-hook 'after-init-hook 'global-company-mode)
   (setq company-backends (delete 'company-semantic company-backends))
-  (setq company-global-modes '(not c-mode c++-mode python-mode))
+  (setq company-global-modes '(not c-mode c++-mode python-mode java-mode))
   (add-to-list 'company-backends 'company-c-headers)
   (define-key company-active-map (kbd "M-h") #'company-quickhelp-manual-begin)
   (setq company-idle-delay 0.5)
@@ -65,7 +65,7 @@
   (add-hook 'c++-mode-hook 'flycheck-mode)
   (add-hook 'c-mode-hook 'flycheck-mode)
   (defun my-flycheck-rtags-setup ()
-  (flycheck-select-checker 'rtags)
+  (setq flycheck-checkers (append '(rtags) flycheck-checkers))
   (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
   (setq-local flycheck-check-syntax-automatically nil))
 ;; c-mode-common-hook is also called by c++-mode
