@@ -72,4 +72,21 @@
   (add-hook 'c-mode-common-hook #'my-flycheck-rtags-setup)
 )
 
-(provide 'init-company-rtags-flycheck)
+;; Flyspell config
+(setq flyspell-issue-welcome-flag nil)
+(if (eq system-type 'darwin)
+    (setq-default ispell-program-name "/usr/local/bin/aspell")
+  (setq-default ispell-program-name "/usr/bin/aspell"))
+(setq-default ispell-list-command "list")
+(setq-default ispell-extra-args '("--run-together" "--run-together-limit=5"))
+(dolist (mode '(emacs-lisp-mode-hook
+                c-mode-hook
+                c++-mode-hook
+                python-mode-hook
+                java-mode-hook))
+  (add-hook mode
+            '(lambda ()
+               (flyspell-prog-mode)))
+)
+
+(provide 'init-company-rtags-flycheck-flyspell)

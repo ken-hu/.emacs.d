@@ -22,7 +22,7 @@
 (require 'init-custom)
 (require 'init-powerline)
 (require 'init-evil)
-(require 'init-company-rtags-flycheck)
+(require 'init-company-rtags-flycheck-flyspell)
 (require 'init-helm-projectile)
 (require 'init-org)
 (require 'nuodb)
