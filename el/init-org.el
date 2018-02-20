@@ -7,17 +7,18 @@
 (setq org-default-notes-file "~/Dropbox/org/capture.org")
 (setq org-directory "~/Dropbox/org")
 ;; Open a file
-(global-set-key (kbd "C-c o t") (lambda() (interactive) (find-file "~/Dropbox/org/todo.org")))
-(global-set-key (kbd "C-c o n") (lambda() (interactive) (find-file "~/Dropbox/org/notes.org")))
+(global-set-key (kbd "C-c o l") (lambda() (interactive) (find-file "~/Dropbox/org/log.org")))
+(global-set-key (kbd "C-c o n") (lambda() (interactive) (find-file "~/Dropbox/org/note.org")))
+;; (global-set-key (kbd "C-c o c") (lambda() (interactive) (find-file "~/Dropbox/org/checkbox.org")))
 ;; Code block highlight in orgmode
 (setq org-src-fontify-natively t)
 ;; #+STARTUP: showeverything
 (setq org-startup-folded nil)
-;(add-hook 'org-mode-hook 'org-indent-mode) ;; Clean view
 (setq org-hide-emphasis-markers t) ;; Hide markup makers
 
 ;; Hide blocks by default
 (add-hook 'org-mode-hook 'org-hide-block-all)
+(add-hook 'org-mode-hook 'org-indent-mode) ;; org auto indentation
 (defvar org-blocks-hidden nil)
 (defun org-toggle-blocks ()
   (interactive)
@@ -31,24 +32,25 @@
           (lambda()
             (local-set-key (kbd "C-c :") nil) ;; disable org-toggle-fixed-width-section
             (local-set-key (kbd "C-c e") 'outline-show-all)
+            (local-set-key (kbd "C-c i") 'org-insert-todo-heading)
             (local-set-key (kbd "C-c t") 'org-toggle-blocks)))
 
 (setq org-capture-templates
       '(
-        ("t" "TODO tasks" entry (file "todo.org")
-         "* TODO%?\n%U\n" :empty-lines 1)
+        ("l" "log" entry (file "log.org")
+         "* %U\n %?\n" :empty-lines 1)
 
-        ("n" "NOTE" entry (file+headline "notes.org" "Work")
+        ("n" "note" entry (file+headline "notes.org" "Work")
          "* %?\n%U\n" :empty-lines 1)
-
-        ("c" "CheckBox" checkitem (file+headline "checkbox.org" "Checkbox")
-         "[ ] %?\n%U\n" :empty-lines 1)
        )
 )
 
-;;(setq org-todo-keywords
-;;      '((sequence "TODO(t)" "|" "DONE(d)")
-;;        (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
-;;        (sequence "|" "CANCELED(c)")))
+(setq org-todo-keywords
+      '((sequence "todo(t)" "|" "done(d)")
+        (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+        (sequence "|" "CANCELED(c)")))
+
+;;(setq-default org-display-custom-times t)
+;;(setq org-time-stamp-custom-formats '("<%Y-%b-%e %a %H:%M>" . "<%Y-%b-%e %a %H:%M>"))
 
 (provide 'init-org)
