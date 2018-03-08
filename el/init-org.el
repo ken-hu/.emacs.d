@@ -9,6 +9,8 @@
 ;; Open a file
 (global-set-key (kbd "C-c o l") (lambda() (interactive) (find-file "~/Dropbox/org/log.org")))
 (global-set-key (kbd "C-c o n") (lambda() (interactive) (find-file "~/Dropbox/org/note.org")))
+;; C-c i to add to-do item -[ ]
+
 ;; (global-set-key (kbd "C-c o c") (lambda() (interactive) (find-file "~/Dropbox/org/checkbox.org")))
 ;; Code block highlight in orgmode
 (setq org-src-fontify-natively t)
@@ -46,8 +48,8 @@
 )
 
 (setq org-todo-keywords
-      '((sequence "todo(t)" "|" "done(d)")
-        (sequence "REPORT(r)" "BUG(b)" "KNOWNCAUSE(k)" "|" "FIXED(f)")
+      '((sequence "status(s)" "todo(t)" "|" "done(d)")
+        (sequence "REMINDER(r)" "|")
         (sequence "|" "CANCELED(c)")))
 
 ;;(setq-default org-display-custom-times t)
