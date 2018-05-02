@@ -27,7 +27,7 @@
   (global-set-key (kbd "C-x b") 'helm-mini)
   (global-set-key (kbd "C-x s") 'helm-semantic-or-imenu)
   (global-set-key (kbd "C-x h") 'helm-find)
-)
+  )
 
 (use-package helm-projectile)
 (use-package projectile
@@ -35,8 +35,29 @@
   (projectile-global-mode)
   (setq projectile-completion-system 'helm)
   (helm-projectile-on)
+  (global-set-key (kbd "C-c b") 'helm-projectile) ;; project buffers
   (setq projectile-switch-project-action 'helm-projectile)
   (setq projectile-enable-caching t)
-)
+  (setq projectile-globally-ignored-directories
+        (append '(
+                  ".git"
+                  ".svn"
+                  "Admin2"
+                  )
+                projectile-globally-ignored-directories))
+  (setq projectile-globally-ignored-files
+        (append '(
+                  ".DS_Store"
+                  ".classpath"
+                  ".gitignore"
+                  "*.gz"
+                  "*.pyc"
+                  "*.jar"
+                  "*.tar.gz"
+                  "*.tgz"
+                  "*.zip"
+                  )
+                projectile-globally-ignored-files))
+  )
 
 (provide 'init-helm-projectile)
