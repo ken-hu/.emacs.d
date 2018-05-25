@@ -35,7 +35,7 @@
   (projectile-global-mode)
   (setq projectile-completion-system 'helm)
   (helm-projectile-on)
-  (global-set-key (kbd "C-c b") 'helm-projectile) ;; project buffers
+  (define-key projectile-mode-map (kbd "C-c b") 'helm-projectile) ;; project buffers
   (setq projectile-switch-project-action 'helm-projectile)
   (setq projectile-enable-caching t)
   (setq projectile-globally-ignored-directories
