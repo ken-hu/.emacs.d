@@ -29,6 +29,12 @@
   (global-set-key (kbd "C-x h") 'helm-find)
   )
 
+(use-package helm-ag
+  :config
+  (global-set-key (kbd "C-x a") 'helm-do-grep-ag)
+  (global-set-key (kbd "C-x C-a") 'helm-ag-project-root)
+  )
+
 (use-package helm-projectile)
 (use-package projectile
   :config

@@ -5,6 +5,7 @@
 (package-initialize)
 
 (setq custom-file "~/.emacs.d/custom.el")
+(setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
   (package-install 'use-package))

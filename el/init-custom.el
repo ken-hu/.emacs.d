@@ -22,7 +22,7 @@
 ;;(set-default-font "menlo-14")
 (add-to-list 'default-frame-alist '(font . "menlo-14"))
 (set-face-attribute 'default t :font "menlo-14")
-(setq-default line-spacing 0.3)
+(setq-default line-spacing 0.2)
 
 (setq-default indent-tabs-mode nil)
 (setq c-default-style "linux"
