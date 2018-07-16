@@ -33,6 +33,7 @@
         "ar" 'rtags-find-all-references-at-point
         "fs" 'rtags-find-symbol
         "fr" 'rtags-find-references
+        "ft" 'rtags-references-tree
         "ff" 'rtags-find-file
 
         "R" 'rtags-rename-symbol
