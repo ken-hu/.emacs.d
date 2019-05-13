@@ -61,4 +61,7 @@
                    " •"))
         ))
 
+;; turn on which func mode by default
+(which-func-mode 1)
+
 (provide 'init-custom)

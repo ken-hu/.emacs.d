@@ -361,7 +361,8 @@
    `(web-mode-type-face ((,class (:inherit ,font-lock-type-face))))
    `(web-mode-warning-face ((,class (:inherit ,font-lock-warning-face))))
    ;; which-func
-   `(which-func ((,class (:inherit ,font-lock-function-name-face))))
+   ;;`(which-func ((,class (:inherit ,font-lock-function-name-face))))
+   `(which-func ((,class (:foreground "#CEBFF3" :weight normal))))
    `(dired-directory ((,class (:foreground ,func :weight normal))))
    `(dired-flagged ((,class (:foreground ,keyword))))
    `(dired-header ((,class (:foreground ,fg3 :background ,bg1))))
