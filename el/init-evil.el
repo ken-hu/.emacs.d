@@ -15,6 +15,8 @@
   (add-hook 'evil-insert-state-entry-hook (lambda() (mouse-wheel-mode -1)))
   (add-hook 'evil-insert-state-exit-hook 'mouse-wheel-mode -1)
   (add-hook 'evil-insert-state-exit-hook 'my-save-if-bufferfilename)
+  ;; Treat underscore as a part of the word
+  (add-hook 'evil-normal-state-entry-hook (lambda() (modify-syntax-entry ?_  "w")))
 )
 
 (with-eval-after-load 'evil
