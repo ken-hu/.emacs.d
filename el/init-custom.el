@@ -64,4 +64,26 @@
 ;; turn on which func mode by default
 (which-func-mode 1)
 
+;; dashboard
+(use-package all-the-icons
+  :config
+  :hook all-the-icons-install-fonts)
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook)
+  (setq dashboard-items '((recents  . 5)
+                          (projects . 5)
+                          (bookmarks . 5)
+                          (agenda . 5)
+                          ;;(registers . 5)
+                          ))
+  (setq dashboard-banner-logo-title "Life Is Good")
+  (setq dashboard-startup-banner 'logo)
+  (setq dashboard-center-content t)
+  (setq dashboard-show-shortcuts nil)
+  (setq dashboard-set-heading-icons t)
+  (setq dashboard-set-file-icons t)
+  (setq dashboard-page-separator "\n\n")
+)
+
 (provide 'init-custom)

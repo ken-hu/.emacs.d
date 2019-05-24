@@ -2,6 +2,7 @@
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (setq package-enable-at-startup nil)
+(setq ad-redefinition-action 'accept) ;; slient the warning
 (package-initialize)
 
 (setq custom-file "~/.emacs.d/custom.el")
@@ -22,45 +23,9 @@
 (require 'init-global-functions)
 (require 'init-custom)
 (require 'init-powerline)
-(require 'init-evil)
-(require 'init-company-rtags-flycheck-flyspell)
 (require 'init-helm-projectile)
+(require 'init-evil)
+(require 'init-company-rtags-flycheck-flyspell-yas)
+(require 'init-magit-jedi-js)
 (require 'init-org)
 (require 'nuodb)
-
-(use-package magit
-  :config
-  (global-set-key (kbd "C-x g") 'magit-status)
-  (setq magit-diff-highlight-hunk-body nil)
-)
-
-(use-package yasnippet
-  :config
-  (yas-reload-all)
-  (add-hook 'c++-mode-hook 'yas-minor-mode)
-  (add-hook 'c-mode-hook 'yas-minor-mode)
-  (add-hook 'python-mode-hook 'yas-minor-mode)
-  (add-hook 'java-mode-hook 'yas-minor-mode)
-  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-  (setq tab-always-indent 'complete)
-  (setq yas-prompt-functions '(yas-completing-prompt
-                               yas-ido-prompt
-                               yas-dropdown-prompt))
-  (define-key yas-minor-mode-map (kbd "<escape>") 'yas-exit-snippet)
-)
-
-(use-package markdown-mode
-  :config
-  (setq markdown-command "/usr/local/bin/markdown")
-)
-
-(use-package jedi
-  :config
-  (add-hook 'python-mode-hook 'jedi:setup)
-  (setq jedi:complete-on-dot t)
-)
-
-(defun js-custom ()
-  "js-mode-hook"
-  (setq js-indent-level 2))
-(add-hook 'js-mode-hook 'js-custom)

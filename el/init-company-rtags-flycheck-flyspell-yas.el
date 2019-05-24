@@ -1,3 +1,4 @@
+(use-package company-c-headers)
 (use-package company
   :config
   (add-hook 'after-init-hook 'global-company-mode)
@@ -60,16 +61,17 @@
         "A" 'rtags-print-source-arguments)))
 )
 
+(use-package flycheck)
 (use-package flycheck-rtags
   :ensure nil
   :config
   (add-hook 'c++-mode-hook 'flycheck-mode)
   (add-hook 'c-mode-hook 'flycheck-mode)
   (defun my-flycheck-rtags-setup ()
-  (setq flycheck-checkers (append '(rtags) flycheck-checkers))
-  (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
-  (setq-local flycheck-check-syntax-automatically nil))
-;; c-mode-common-hook is also called by c++-mode
+    (setq flycheck-checkers (append '(rtags) flycheck-checkers))
+    (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
+    (setq-local flycheck-check-syntax-automatically nil))
+  ;; c-mode-common-hook is also called by c++-mode
   (add-hook 'c-mode-common-hook #'my-flycheck-rtags-setup)
 )
 
@@ -90,4 +92,20 @@
                (flyspell-prog-mode)))
 )
 
-(provide 'init-company-rtags-flycheck-flyspell)
+(use-package yasnippet
+  :defer
+  :config
+  (yas-reload-all)
+  (add-hook 'c++-mode-hook 'yas-minor-mode)
+  (add-hook 'c-mode-hook 'yas-minor-mode)
+  (add-hook 'python-mode-hook 'yas-minor-mode)
+  (add-hook 'java-mode-hook 'yas-minor-mode)
+  (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+  (setq tab-always-indent 'complete)
+  (setq yas-prompt-functions '(yas-completing-prompt
+                               yas-ido-prompt
+                               yas-dropdown-prompt))
+  (define-key yas-minor-mode-map (kbd "<escape>") 'yas-exit-snippet)
+)
+
+(provide 'init-company-rtags-flycheck-flyspell-yas)

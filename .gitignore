@@ -12,3 +12,4 @@ eshell/lastdir
 url
 /.python-environments/*
 /ac-comphist.dat
+transient/*

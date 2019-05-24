@@ -6,11 +6,6 @@
 ;; The best way to customize this mode is to first load this file as-is,
 ;; then add another mode-hook that will make the changes you prefer.
 
-(defvar nuodb-c-version "1.1"
-  "Version of the NuoDB C/C++/Java style configuration.")
-
-(message "Loading nuodb Elisp package version %s" nuodb-c-version)
-
 (defvar nuodb-3rdparty (or (getenv "THIRDPARTY_DIR")
                            (concat (expand-file-name "~") "/nuo3rdparty")))
 (defvar nuodb-target (cond ((string= system-type "windows-nt") "x86_32-windows")
