@@ -6,6 +6,7 @@
 (use-package evil
   :config
   (evil-mode t)
+  (evil-set-initial-state 'term-mode 'emacs)
   (evil-leader/set-leader ",")
   (define-key evil-insert-state-map (kbd "C-c") 'evil-normal-state)
   ;; Ignore EOF in visual mode

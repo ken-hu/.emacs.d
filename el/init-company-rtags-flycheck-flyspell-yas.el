@@ -12,8 +12,8 @@
 )
 
 (add-to-list 'load-path "/usr/local/rtags/share/emacs/site-lisp/rtags")
+(use-package company-rtags)
 (use-package rtags
-  :ensure nil
   :config
   (setq rtags-autostart-diagnostics t)
   (rtags-diagnostics)
@@ -63,7 +63,6 @@
 
 (use-package flycheck)
 (use-package flycheck-rtags
-  :ensure nil
   :config
   (add-hook 'c++-mode-hook 'flycheck-mode)
   (add-hook 'c-mode-hook 'flycheck-mode)
