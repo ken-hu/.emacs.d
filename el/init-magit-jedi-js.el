@@ -1,6 +1,7 @@
 (use-package magit
   :config
   (global-set-key (kbd "C-x g") 'magit-status)
+  (global-set-key (kbd "C-x b") 'magit-blame-addition)
   (setq magit-diff-highlight-hunk-body nil)
 )
 
