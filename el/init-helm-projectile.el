@@ -33,6 +33,7 @@
   :config
   (global-set-key (kbd "C-x a") 'helm-do-grep-ag)
   (global-set-key (kbd "C-x C-a") 'helm-ag-project-root)
+  (setq helm-ag-command-option "-G py\|h\|cpp --ignore java")
   )
 
 (use-package helm-projectile)
