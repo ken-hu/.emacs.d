@@ -18,4 +18,8 @@
 
 (global-set-key (kbd "C-x p") 'switch-to-previous-buffer)
 
+(add-hook 'c-mode-common-hook
+          (lambda()
+            (local-set-key  (kbd "C-x C-o") 'ff-find-other-file)))
+
 (provide 'init-global-functions)

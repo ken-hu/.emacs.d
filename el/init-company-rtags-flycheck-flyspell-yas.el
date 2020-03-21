@@ -107,8 +107,4 @@
   (define-key yas-minor-mode-map (kbd "<escape>") 'yas-exit-snippet)
 )
 
-(add-hook 'c-mode-common-hook
-          (lambda()
-            (local-set-key  (kbd "C-x C-o") 'ff-find-other-file)))
-
 (provide 'init-company-rtags-flycheck-flyspell-yas)
